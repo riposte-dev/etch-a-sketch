@@ -6,7 +6,22 @@
     width: 1024px;
     height: 1024px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+}
+
+.tileRow {
+    background: white;
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    flex: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.tile {
+    background: white;
+    border: 1px solid black;
+    flex: auto;
 }
