@@ -19,3 +19,9 @@ tiles.forEach((tile) => {
         e.target.setAttribute("style", "background: cornflowerblue;");
     })
 });
+
+const button = document.querySelector("button");
+
+button.addEventListener('click', (e) => {
+    prompt("Resize grid", 16);
+});
