@@ -4,6 +4,10 @@ const container = document.querySelector(".container");
 let tiles = document.querySelectorAll(".tile");
 
 function createNewGrid(length) {
+    tiles.forEach((tile) => {
+        tile.remove();
+    });
+
     /* Divide grid into rows as flex containers */
     for (let i = 0; i < length; i++) {
         const tileRow = document.createElement("div");
@@ -35,6 +39,6 @@ button.addEventListener('click', (e) => {
     let userInput = parseInt(prompt(`Resize grid [${lengthLower}, ${lengthUpper}]`, 16));
 
     if (lengthLower <= userInput && userInput <= lengthUpper) {
-        console.log("Valid number");
+        createNewGrid(userInput);
     }
 });
