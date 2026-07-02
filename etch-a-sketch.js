@@ -4,9 +4,15 @@ const container = document.querySelector(".container");
 let tiles = document.querySelectorAll(".tile");
 
 function createNewGrid(length) {
+    /* Remove all tiles from each tileRow */
     tiles.forEach((tile) => {
         tile.remove();
     });
+
+    /* Remove all tileRows from container */
+    document.querySelectorAll(".tileRow").forEach((tileRow) => {
+        tileRow.remove();
+    })
 
     /* Divide grid into rows as flex containers */
     for (let i = 0; i < length; i++) {
