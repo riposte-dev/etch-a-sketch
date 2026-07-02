@@ -11,8 +11,6 @@
 }
 
 .tileRow {
-    background: white;
-    border: 1px solid black;
     height: 100%;
     width: 100%;
     flex: auto;
