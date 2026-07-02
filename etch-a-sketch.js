@@ -1,3 +1,5 @@
+const lengthLower = 1; /* Minimum grid length */
+const lengthUpper = 100; /* Maximum grid length */
 const container = document.querySelector(".container");
 let tiles = document.querySelectorAll(".tile");
 
@@ -30,5 +32,9 @@ createNewGrid(16); /* Create a default 16x16 grid */
 const button = document.querySelector("button");
 
 button.addEventListener('click', (e) => {
-    prompt("Resize grid", 16);
+    let userInput = parseInt(prompt(`Resize grid [${lengthLower}, ${lengthUpper}]`, 16));
+
+    if (lengthLower <= userInput && userInput <= lengthUpper) {
+        console.log("Valid number");
+    }
 });
