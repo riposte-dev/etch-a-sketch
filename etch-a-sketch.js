@@ -32,7 +32,7 @@ function createNewGrid(length) {
 
     tiles.forEach((tile) => {
         tile.addEventListener('mouseenter', (e) => {
-            e.target.setAttribute("style", "background: cornflowerblue;");
+            e.target.setAttribute("style", "background: black;");
         });
     });
 }
