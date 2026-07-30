@@ -3,6 +3,15 @@
 body {
     font-family: "Press Start 2P";
 
+    /* Center page elements along vertical axis */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,9 +20,9 @@ body {
 #sketch-container {
     background: white;
     border: 4px solid black;
-    padding: 32px;
-    width: 720px;
-    height: 720px;
+    padding: 3%;
+    min-width: 30%;
+    aspect-ratio: 1/1;
 
     #sketch-canvas {
         background: white;
@@ -22,16 +31,16 @@ body {
         min-height: 100%;
 
         display: flex;
-        flex-direction: column; /* Since the grid is divided into horizontal tiles */
+        flex-direction: column; /* Sketch canvas is divided into rows of tiles, so we need a column of tile rows */
         justify-content: center;
     }
 }
-
 
 .tileRow {
     height: 100%;
     width: 100%;
     flex: auto;
+
     display: flex;
     justify-content: center;
 }
