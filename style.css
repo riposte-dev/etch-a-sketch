@@ -8,16 +8,25 @@ body {
     align-items: center;
 }
 
-.container {
+#sketch-container {
     background: white;
     border: 4px solid black;
     padding: 32px;
     width: 720px;
     height: 720px;
-    display: flex;
-    flex-direction: column; /* Since the grid is divided into horizontal tiles */
-    justify-content: center;
+
+    #sketch-canvas {
+        background: white;
+        border: 4px solid black;
+        min-width: 100%;
+        min-height: 100%;
+
+        display: flex;
+        flex-direction: column; /* Since the grid is divided into horizontal tiles */
+        justify-content: center;
+    }
 }
+
 
 .tileRow {
     height: 100%;

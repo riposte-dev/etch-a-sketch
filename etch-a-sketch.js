@@ -1,6 +1,6 @@
 const lengthLower = 1; /* Minimum grid length */
 const lengthUpper = 100; /* Maximum grid length */
-const container = document.querySelector(".container");
+const sketchCanvas = document.querySelector("#sketch-canvas");
 let tiles = document.querySelectorAll(".tile");
 
 function createNewGrid(length) {
@@ -9,7 +9,7 @@ function createNewGrid(length) {
         tile.remove();
     });
 
-    /* Remove all tileRows from container */
+    /* Remove all tileRows from sketch canvas */
     document.querySelectorAll(".tileRow").forEach((tileRow) => {
         tileRow.remove();
     })
@@ -18,7 +18,7 @@ function createNewGrid(length) {
     for (let i = 0; i < length; i++) {
         const tileRow = document.createElement("div");
         tileRow.className = "tileRow";
-        container.appendChild(tileRow)
+        sketchCanvas.appendChild(tileRow)
 
         /* In each row, create flex items */
         for (let j = 0; j < length; j++) {
