@@ -4,11 +4,6 @@ const sketchCanvas = document.querySelector("#sketch-canvas");
 let tiles = document.querySelectorAll(".tile");
 
 function createNewGrid(length) {
-    /* Remove all tiles from each tileRow */
-    tiles.forEach((tile) => {
-        tile.remove();
-    });
-
     /* Remove all tileRows from sketch canvas */
     document.querySelectorAll(".tileRow").forEach((tileRow) => {
         tileRow.remove();
