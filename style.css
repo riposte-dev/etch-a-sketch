@@ -22,11 +22,21 @@ main {
         display: flex;
         flex-direction: column;
         gap: 8px;
+
+        div {
+            font-size: medium;
+            font-family: "Press Start 2P";
+            background-color: white;
+            border: 4px solid black;
+            padding: 8px;
+        }
     }
 }
 
 button {
+    font-size: medium;
     font-family: "Press Start 2P";
+    text-align: left;
     background-color: white;
     border: 4px solid black;
     padding: 8px;

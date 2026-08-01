@@ -3,9 +3,13 @@ const LENGTH_UPPER = 100; /* Maximum grid length */
 
 const buttons = document.querySelectorAll("button");
 const sketchCanvas = document.querySelector("#sketch-canvas");
+const whiteTilesCounter = document.querySelector("#white-tiles-counter");
+const blackTilesCounter = document.querySelector("#black-tiles-counter");
 let tiles = document.querySelectorAll(".tile");
 
 let gridLength = 16; /* Start with a 16x16 grid by default */
+let whiteTiles = 16 * 16;
+let blackTiles = 0;
 
 function createNewGrid(length) {
     /* Remove all tileRows from sketch canvas */
@@ -23,15 +27,28 @@ function createNewGrid(length) {
         for (let j = 0; j < length; j++) {
             const tile = document.createElement("div");
             tile.className = "tile";
+            tile.setAttribute("style", "background: white");
             tileRow.appendChild(tile);
         }
     }
 
     tiles = document.querySelectorAll(".tile");
 
+    whiteTiles = length * length;
+    blackTiles = 0;
+    whiteTilesCounter.innerHTML = `White Tiles<br><br>${whiteTiles}`;
+    blackTilesCounter.innerHTML = `Black Tiles<br><br>${blackTiles}`;
+
     tiles.forEach((tile) => {
         tile.addEventListener('mouseenter', (e) => {
-            e.target.setAttribute("style", "background: black;");
+            /* Run if and only if the tile is to be painted */
+            if (e.target.style.backgroundColor == "white") {
+                e.target.setAttribute("style", "background: black;");
+                whiteTiles -= 1;
+                blackTiles += 1;
+                whiteTilesCounter.innerHTML = `White Tiles<br><br>${whiteTiles}`;
+                blackTilesCounter.innerHTML = `Black Tiles<br><br>${blackTiles}`;
+            } 
         });
     });
 }
