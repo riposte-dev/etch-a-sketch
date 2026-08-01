@@ -3,6 +3,7 @@ const LENGTH_UPPER = 100; /* Maximum grid length */
 
 const buttons = document.querySelectorAll("button");
 const sketchCanvas = document.querySelector("#sketch-canvas");
+const resizeCanvasButton = document.querySelector("#resize");
 const whiteTilesCounter = document.querySelector("#white-tiles-counter");
 const blackTilesCounter = document.querySelector("#black-tiles-counter");
 let tiles = document.querySelectorAll(".tile");
@@ -36,6 +37,7 @@ function createNewGrid(length) {
 
     whiteTiles = length * length;
     blackTiles = 0;
+    resizeCanvasButton.innerHTML = `Resize Canvas<br><br>${gridLength}x${gridLength}`
     whiteTilesCounter.innerHTML = `White Tiles<br><br>${whiteTiles}`;
     blackTilesCounter.innerHTML = `Black Tiles<br><br>${blackTiles}`;
 
